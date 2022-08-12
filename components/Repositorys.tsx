@@ -2,7 +2,6 @@ import React from "react";
 
 type Repos = {
   pinnedItems: Array<object>;
-  name: string;
 };
 
 export default function Repositorys({ pinnedItems }: Repos) {
