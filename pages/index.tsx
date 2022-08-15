@@ -1,13 +1,5 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import {
-  ApolloClient,
-  InMemoryCache,
-  createHttpLink,
-  gql
-} from "@apollo/client";
-import { setContext } from "@apollo/client/link/context";
-import Repositorys from "../components/Repositorys";
 
 const Home: NextPage = () => {
   return (

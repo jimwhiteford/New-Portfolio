@@ -68,8 +68,6 @@ export async function getStaticProps() {
     ({ node }: { node: any }) => node
   );
 
-  console.log(pinnedItems);
-
   return {
     props: {
       pinnedItems
