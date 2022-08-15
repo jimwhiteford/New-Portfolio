@@ -6,7 +6,7 @@ type Repos = {
 
 export default function Repositorys({ pinnedItems }: Repos) {
   return (
-    <div className="grid grid-cols-1 justify-items-center lg:grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 justify-items-center mx-1 mt-10 mb-10 lg:grid-cols-2 2xl:grid-cols-3 gap-5">
       {pinnedItems.map((data: any) => {
         return (
           <div className="max-w-lg bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">

@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 import {
-  ChevronDownIcon,
   HomeIcon,
   SearchIcon,
   LoginIcon,
-  MenuIcon
+  CodeIcon,
+  ChevronDownIcon
 } from "@heroicons/react/solid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { faBars, faMicrochip } from "@fortawesome/free-solid-svg-icons";
+import Drawer from "../components/Drawer";
 
-function Header() {
+function Header(setDrawerOpen: boolean) {
   const [dropdownOpen, setdropdownOpen] = useState(false);
+  const [state, setState] = React.useState(false);
   return (
     <div className="sticky top-0 z-50 flex bg-white px-4 py-2 shadow-md">
       <a className="flex items-center ml-3" href="/">
@@ -20,14 +22,27 @@ function Header() {
           className=" fa-2x text-purple-900"
         />
       </a>
-      <div className="mx-7 flex items-center xl:min-w-[300px]">
+      <a href="/" className="ml-10 flex items-center md:hover:cursor-pointer">
         <HomeIcon className="h-5 w-5" />
         <p className="ml-2 hidden flex-1 lg:inline">Home</p>
-        <ChevronDownIcon className="h-5 w-5" />
-      </div>
+      </a>
+      <ChevronDownIcon
+        className="flex items-center ml-2 w-5 mr-5 hover:cursor-pointer md:hidden"
+        onClick={() => setState(!state)}
+      />
+      <a
+        href="/repositorys"
+        className="hidden items-center ml-10 mr-10 hover:cursor-pointer md:flex "
+      >
+        <CodeIcon className="h-5 w-5" />
+        <p className="ml-2 hidden flex-1 lg:inline">Projects</p>
+      </a>
 
       <form className="flex flex-1 items-center space-x-2 rounded-sm border border-gray-400 bg-gray-100 px-3 py-1">
-        <SearchIcon className="h-6 w-6 text-gray-400 mr-3" />
+        <SearchIcon
+          className="h-6 w-6 text-gray-400 mr-3"
+          onClick={() => setState(!state)}
+        />
         <input
           className="flex-1 bg-transparent outline-none"
           type="text"
@@ -36,7 +51,7 @@ function Header() {
         <button type="submit" hidden></button>
       </form>
 
-      <div className="hidden mx-5 items-center space-x-2 lg:inline-flex ">
+      <div className="hidden mx-10 items-center space-x-6 lg:inline-flex ">
         <a href="https://www.linkedin.com/in/jimwhiteford/" target="_blank">
           <FontAwesomeIcon icon={faLinkedinIn} className="fa-2x" />
         </a>

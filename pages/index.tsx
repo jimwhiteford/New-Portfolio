@@ -1,5 +1,7 @@
+import Drawer from "../components/Drawer";
 import type { NextPage } from "next";
 import Head from "next/head";
+import About from "../components/About";
 
 const Home: NextPage = () => {
   return (
@@ -7,6 +9,7 @@ const Home: NextPage = () => {
       <Head>
         <title>My Portfolio</title>
       </Head>
+      <About />
     </div>
   );
 };
